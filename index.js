@@ -40,3 +40,56 @@ class Manager extends Employee {
         console.info(`Hello ${name}`);
     }
 }
+
+class Shape {
+    paint() {
+        console.log('paint');
+    }
+}
+
+class Circle extends Shape {
+    paint() {
+        console.log('paint circle');
+    }
+}
+
+const circle = new Circle();
+circle.paint();
+
+class getterSetter {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+
+    set fullName(value) {
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+    }
+}
+
+const eko123 = new Person("Eko", "Wibowo");
+console.log(eko.fullName);
+
+class Customer {
+    firstName;
+    lastName;
+    balance = 0;
+
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    sayHello() {
+
+    }
+}
+
+const rizal = new Customer("Eko", "Wibowo");
+console.info(rizal)
