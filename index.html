@@ -14,6 +14,10 @@
     class MathUtil {
         
         static sum(...numbers){
+            if(numbers.length === 0){
+                throw new Error('Parameter nya kurangbanyak')
+            }
+
             let total = 0
             for (const number of numbers) {
                 total += number
@@ -22,8 +26,40 @@
         }
     } 
     
-    const result = MathUtil.sum(1,1,1,1,4,1)
-    console.info(result)
+    // const result = MathUtil.sum(1,1,1,1,4,1)
+    // const result = MathUtil.sum()
+    // console.info(result)
+
+    try {
+        console.info(MathUtil.sum())
+        console.info('rizal')
+    } catch (error) {
+        console.info('baca: ' + error)
+    } finally {
+        console.info('selesai')
+    }
+
+    class validationError extends Error {
+        constructor(message, field){
+            super(message)
+            this.field = field  
+        }
+    }
+
+    class MathUtils {
+        
+        static sum(...numbers){
+            if(numbers.length === 0){
+                throw new validationError('Parameter nya kurangbanyak')
+            }
+
+            let total = 0
+            for (const number of numbers) {
+                total += number
+            }
+            return total
+        }
+    } 
 
 </script>
 </html>
